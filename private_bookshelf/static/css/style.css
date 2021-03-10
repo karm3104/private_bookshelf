@@ -1,0 +1,241 @@
+
+
+/* body {
+    background-color: #f0f3f5;
+	font-family: 'Roboto';
+/* } */
+
+.box {
+	background-color: #fff;
+	padding: 35px 40px;
+	margin-top: 60px; /*Remove, its example*/
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-group {
+	margin: 5px 0px;
+}
+
+.addon-google {
+	background-color: hsl(345deg 94% 42% / 44%);
+	border: none;
+	border-radius: 2px 0px 0px 2px;
+	color: #fff;
+}
+
+.btn-google,
+.btn-google:hover {
+	background-color: hsl(345deg 94% 42% / 44%);
+	color: #fff;
+	border-radius: 0px 2px 2px 0px;
+	font-size: 15px;
+}
+
+.addon-twitter {
+	background-color: #00d7fa61;
+	border: none;
+	border-radius: 2px 0px 0px 2px;
+	color: #fff;
+}
+
+.btn-twitter,
+.btn-twitter:hover {
+	background-color: #00d7fa61;
+	color: #fff;
+	border-radius: 0px;
+	font-size: 15px;
+}
+
+.btn-primary {
+	border-radius: 2px;
+	background-color: #3f7876;
+	border-color: #23a9f6;
+	margin: 10px 0px;
+}
+
+p {
+	color: #aebbcb;
+} 
+
+a {
+	color: #23a9f6;
+}
+
+.divider-form {
+    border: 1px solid #EBEFF1;
+    margin: 15px -40px 10px;
+}
+
+label {
+	text-transform: uppercase;
+	color: #bdc7d4;
+}
+
+strong {
+	color: #95a5bb;
+}
+
+.form-control {
+    background: none;
+    height: 40px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #8b9eb6;
+    padding: 0px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+div.field {
+    margin-top: 30px;
+}
+
+div.field > span.helptext {
+    font-size: 14px;
+    color: #999;
+}
+
+div.field > label {
+    display: block;
+}
+
+div.field > input, div.field > textarea, div.field > select, div.field > button {
+    width: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px #999;
+}
+
+.alert-message {
+	background-color: red;
+	color:rgb(255, 255, 255);
+}
+
+.info-message {
+	background-color: rgb(108, 116, 236);
+	color:white;
+} */
+
+body {
+    background-color: #f0f3f5;
+	font-family: 'Roboto';
+}
+
+.box {
+	background-color: #fff;
+	padding: 35px 40px;
+	margin-top: 60px; /*Remove, its example*/
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-group {
+	margin: 5px 0px;
+}
+
+.addon-google {
+	background-color: hsl(345, 83%, 36%);
+	border: none;
+	border-radius: 2px 0px 0px 2px;
+	color: #fff;
+}
+
+.btn-google,
+.btn-google:hover {
+	background-color: hsl(345, 94%, 42%);
+	color: #fff;
+	border-radius: 0px 2px 2px 0px;
+	font-size: 15px;
+}
+
+.addon-twitter {
+	background-color: #00c6e9;
+	border: none;
+	border-radius: 2px 0px 0px 2px;
+	color: #fff;
+}
+
+.btn-twitter,
+.btn-twitter:hover {
+	background-color: #00d7fa;
+	color: #fff;
+	border-radius: 0px;
+	font-size: 15px;
+}
+
+.btn-primary {
+	border-radius: 2px;
+	background-color: #99999991;
+	border-color: ##080808de;
+	margin: 10px 0px;
+}
+
+p {
+	color: #aebbcb;
+} 
+
+a {
+	color: #23a9f6;
+}
+
+.divider-form {
+    border: 1px solid #EBEFF1;
+    margin: 15px -40px 10px;
+}
+
+label {
+	text-transform: uppercase;
+	color: #bdc7d4;
+}
+
+strong {
+	color: #95a5bb;
+}
+
+.form-control {
+    background: none;
+    height: 40px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #8b9eb6;
+    padding: 0px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+div.field {
+    margin-top: 30px;
+}
+
+div.field > span.helptext {
+    font-size: 14px;
+    color: #999;
+}
+
+div.field > label {
+    display: block;
+}
+
+div.field > input, div.field > textarea, div.field > select, div.field > button {
+    width: 100%;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: solid 1px #999;
+}
+
+.alert-message {
+	background-color: red;
+	color:white;
+}
+
+.info-message {
+	background-color: rgb(108, 116, 236);
+	color:white;
+}

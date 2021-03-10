@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 本詳細｜MY BOOK SHELF {% endblock %}
+
+{% block active_bookshelf_list %} active {% endblock %}
+
+{% block contents %}
+<div class="container">
+    <div class="my-div-style w-100">
+        <div class="row">
+            <div class="col-3">
+                <strong>タイトル</strong>
+            </div>
+            <div class="col-9">
+                {{ object.title }}
+            </div>
+        </div>
+        <hr>
+        <div class="flexlistd">
+            <div class="rowdetail">
+                <div class="col-6">
+                    <strong>写真</strong>
+                </div>
+                <div class="col-8">
+                    {% if object.photo %}
+                        <img src="{{ object.photo.url }}" width="180" height="200/">
+                    {% endif %}
+                </div>
+            </div>
+            <hr>
+            <div class="flexlistdd">
+                <div class="rowr">
+                    <div class="col-6">
+                        <strong>著作者</strong>
+                    </div>
+                    <div class="col-12">
+                        {{ object.auther }}
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="rowr">
+                    <div class="col-6">
+                        <strong>出版社</strong>
+                    </div>
+                    <div class="col-12">
+                        {{ object.publisher }}
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="rowr">
+                    <div class="col-6">
+                        <strong>ISBN</strong>
+                    </div>
+                    <div class="col-12">
+                        {{ object.isbnum }}
+                    </div>
+                </div>
+            </div>
+        </div>
+            <hr>
+            <div class="rowcom">
+                <div class="col-3">
+                    <strong>コメント</strong>
+                </div>
+                <div class="col-9">
+                    {{ object.comment|linebreaksbr }}
+                </div>
+            </div>
+            <hr>
+
+
+            <div class="row">
+                <div class="col-3">
+                    <strong>しおり</strong>
+                </div>
+                <div class="col-9">
+                    {{ object.readpage }}ページ
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-3">
+                    <strong>グループ</strong>
+                </div>
+                <div class="col-9">
+                    {{ object.group }}
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-3">
+                    <strong>評価</strong>
+                </div>
+                <div class="col-9">
+                    {{ object.evaluation }}
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-3">
+                    <strong>作成日時</strong>
+                </div>
+                <div class="col-9">
+                    {{ object.created_at }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <strong>更新日時</strong>
+                </div>
+                <div class="col-9">
+                    {{ object.updated_at }}
+                </div>
+            </div>
+
+        <a class="btn btn-outline-success mt-5 mb-3" href="{% url 'bookshelf:book_update' object.pk %}">編集</a>
+        <a class="btn btn-outline-danger mt-5 ml-2 mb-3" href="{% url 'bookshelf:book_delete' object.pk %}">削除</a>
+    </div>
+</div>
+{% endblock %}

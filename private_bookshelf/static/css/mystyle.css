@@ -1,0 +1,152 @@
+/* ベースページナビバー付近 */
+.navbar-custom .navbar-brand {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+/* フッター最下部固定CSS */
+body, #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+footer {
+    margin-top: auto;
+}
+
+.rowiqry {
+    /* display: flex; */
+    flex-wrap: wrap;
+    /* justify-content:center; */
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    text-align: center;
+}
+
+.my-div-style {
+    margin-top:8rem;
+    margin-bottom:1rem;
+    text-align: center;
+
+}
+
+/* FOR book_list */
+/* 新規作成検索窓用フレックスボックス */
+.contorigin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* FOR book_list */
+/* タイトル右寄せ用 */
+.flext{
+    text-align:left;
+}
+
+.flexlist {
+    display: flex;
+    flex-direction: column;
+}
+/* booklistリスト右側 */
+.flexlistr {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+/* bookdetail左側写真用 */
+.flexlistl {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align:left;
+    flex-wrap:wrap
+}
+/* bookdetail左側写真用 */
+.flexlistd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align:left;
+    flex-wrap:wrap
+}
+.rowdetail{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 80px;
+}
+/* bookdetail右側、著作者等用 */
+.flexlistdd {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin-top: 15px;
+    margin-right: 80px;
+    margin-left:80px;
+}
+/* bookdetailコメント欄、崩れ対応 */
+/* word-breakで強制的に幅を合わせないとアルファベット
+無意味に羅列したらヘッダー幅を越してしまうため */
+.rowcom{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    word-break:break-all;
+}
+.bookimg{
+    margin-bottom: 5px;
+}
+.rowr {
+    /* display: flex; */
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+
+/* IE対応 */
+/* indexページフッター上余白除去 */
+/* indexページh1のグラデーションIE不可対応 */
+@media all and (-ms-high-contrast:none){
+    body #wrapper{
+        display: block;
+    }
+    .masthead h1 {
+        color:rgba(240, 248, 255, 0.753);
+        background:none;
+    }
+    #mainNav{
+        background-color: rgba(165, 165, 165, 0.61);
+    }
+    #mainNav .nav-link{
+        color:rgba(255, 255, 255, 0.5);
+    }
+    .navbar-shrink#mainNav .nav-link{
+        color:rgba(255, 255, 255, 0.911);
+    }
+    .navbar-shrink#mainNav .navbar-brand{
+        color:rgba(255, 255, 255, 0.911);
+    }
+    .flexlistdd {
+        margin-top: 15px;
+        margin-right: 80px;
+    }
+    .flexlistd {
+        text-align:left;
+        flex-wrap:wrap
+    }
+    .rowr {
+        display: block;
+        flex-wrap: wrap;
+        margin-right: -0.75rem;
+        margin-left: -0.75rem;
+    }
+    .rowdetail{
+        display: block;
+        flex-wrap: wrap;
+        padding-left: 80px;
+    }
+}

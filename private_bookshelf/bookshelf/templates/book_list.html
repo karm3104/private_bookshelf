@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} 本一覧｜MY BOOK SHELF {% endblock %}
+
+{% block active_bookshelf_list %} active {% endblock %}
+
+{% block head %}
+<link href="{% static 'css/clean-blog.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <div class="row">
+        <div class="my-div-style w-100">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class = contorigin>
+                    <div class="form-inline my-2">
+                        <a class="btn btn-outline-primary float-right" href="{% url 'bookshelf:book_create' %}">新規作成</a>
+                    </div>
+<!-- 検索フォーム start -->
+                    <div class="clearfix">
+                        <form class="form-inline my-2" method="GET" action="">
+                            <input type="text" class="form-control" input name="query" value="{{request.GET.query}}">
+                            <button type="submit" value="search" class="btn btn-outline-primary">検索</button>
+                        </form>
+                    </div>
+<!-- 検索フォーム end -->
+                </div>
+
+                <hr>
+
+            </div>
+<!-- リスト表示 start -->
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% for bookshelf in bookshelf_list %}
+                    <div class="post-preview">
+                        <a href="{% url 'bookshelf:book_detail' bookshelf.pk %}">
+                            <div class="flext">
+                                <h3 class="post-title">
+                                    {{ bookshelf.title }}
+                                </h3>
+                            </div>
+                            <div class="flexlistl">
+                                <div>
+                                    <div>
+                                        <h5 class="post-meta">
+                                            {{ bookshelf.auther }}
+                                        </h5>
+                                        {% if bookshelf.photo %}
+                                            <img src="{{ bookshelf.photo.url }}" class="bookimg" height="100" width="80">
+                                        {% endif %}
+                                            <h5 class="post-meta">{{ bookshelf.group }}</h5>
+                                    </div>
+                                </div>
+                                <div class="flexlistr">
+                                    <div>
+                                        <p class="post-meta">{{ bookshelf.comment|truncatechars:10 }}</p>
+                                        <p class="post-meta">{{ bookshelf.readpage }}</p>
+                                        <p class="post-meta">{{ bookshelf.updated_at }}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <hr>
+                {% empty %}
+                    <p>本の登録がありません</p>
+                {% endfor %}
+            </div>
+<!-- リスト表示 end -->
+<!-- ページネーション処理 start -->
+                {% if is_paginated %}
+                    <ul class = "pagination">
+                        <!--前ページへのリンク-->
+                        {% if page_obj.has_previous %}
+                            <li class = "page-item">
+                                <a class = "page-link" href = "?page = {{ page_obj.previous_page_number }}">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        <!--ページ数表示-->
+                        {% for page_num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == page_num %}
+                                <li class="page-item active"><a class="page-link" href="#">{{ page_num }}</a></li>
+                            {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        <!--次ページへのリンク-->
+                        {% if page_obj.has_next %}
+                            <li class = "page-item">
+                                <a class = "page-link" href = "?page = {{ page_obj.next_page_number }}">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ページネーション処理 end -->
+{% endblock %}

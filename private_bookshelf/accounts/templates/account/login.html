@@ -1,0 +1,57 @@
+{% extends "./base.html" %}
+{% load socialaccount %}
+
+{% block title %}Log in | MY BOOK SHELF{% endblock %}
+
+{% block content %}
+{% comment %} {% get_providers as socialaccount_providers %}
+{% for provider in socialaccount_providers %}
+<!-- ソーシャルログオン start -->
+{% if provider.name == "Google" %}
+<div class="input-group">
+  <span class="input-group-addon addon-google">
+	<i class="fa fa-fw fa-2x fa-google fa-fw"></i>
+  </span>
+  <a class="btn btn-lg btn-block btn-google socialaccount_provider {{provider.id}}" href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"> Googleでサインイン</a>
+</div>
+{% elif provider.name == "Twitter" %}
+<div class="input-group">
+  <span class="input-group-addon addon-twitter">
+	<i class="fa fa-fw fa-2x fa-twitter fa-fw"></i>
+  </span>
+  <a class="btn btn-lg btn-block btn-twitter  socialaccount_provider {{provider.id}}" href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"> Twitterでサインイン</a>
+</div>
+{% endif %}
+{% endfor %}
+<!-- ソーシャルログオン end --> {% endcomment %}
+
+<!-- django form -->
+<form role="form" class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+ 
+  {% for field in form %}
+
+   {% if field.label == "ログインしたままにする" %}
+   <div class="form-group field">
+    <label for="{{ field.id_for_label }}">{{field.label}}　{{ field }}</label>
+  </div>
+
+   {% else %}
+  	<div class="form-group field">
+    <label for="{{ field.id_for_label }}">{{field.label}}</label>
+    {{ field }}
+  </div>
+  {% endif %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+    <div class="alert-message">
+      <p>{{ error }}</p>
+    </div>
+  {% endfor %}
+
+  <button type="submit" class="btn-block btn btn-lg btn-primary">Sign in</button>
+  <p class="text-center">ユーザIDを登録したい方は <a href="{{ signup_url }}">ここから登録</a></p>
+  <p class="text-center">パスワードを忘れた方は <a href="{% url 'account_reset_password' %}">ここからリセット</a></p>
+</form>
+<!-- django form end -->
+{% endblock %}

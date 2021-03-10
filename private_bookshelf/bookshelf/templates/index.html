@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Web上にあなた専用の本棚を保存できるサービス | MY BOOK SHELF{% endblock %}
+
+{% block header %}
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">MY BOOK SHELF</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">Let's make your own bookshelf on the WEB!</h2>
+            {% if user.is_authenticated %}
+            <a class="btn btn-outline-primary js-scroll-trigger" href="{% url 'account_login' %}" >Book list</a>
+            {% else %}
+            <a class="btn btn-outline-primary js-scroll-trigger" href="{% url 'account_login' %}" >LOG IN</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block contents %}
+
+<!-- Projects-->
+<section class="projects-section bg-light" id="projects">
+    <div class="container">
+        <!-- Featured Project Row-->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+            <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static 'assets/img/bs-top-image.jpg' %}" alt="" /></div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                    <h4>本棚を持ち運ぼう！</h4>
+                    <p class="text-black-50 mb-0">MY BOOK SHELFはWeb上にあなた専用の本棚を保存できるサービスです。</p>
+                </div>
+            </div>
+        </div>
+        <!-- Project One Row-->
+        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+            <div class="col-lg-6"><img class="img-fluid" src="{% static 'assets/img/books-index_image02.jpg' %}" alt="" /></div>
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">この本持っていたかな？</h4>
+                            <p class="mb-0 text-white-50">外出先で困ったことはありませんか？<br>本を登録しておけば、いつでもMY BOOK SHELF で確認することができます。</p>
+                            <hr class="d-none d-lg-block mb-0 ml-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project Two Row-->
+        <div class="row justify-content-center no-gutters">
+            <div class="col-lg-6"><img class="img-fluid" src="{% static 'assets/img/books-index_image01.jpg' %}" alt="" /></div>
+            <div class="col-lg-6 order-lg-first">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-right">
+                            <h4 class="text-white">あの本どこに置いたかな？</h4>
+                            <p class="mb-0 text-white-50">好きな言葉で検索することができます。本棚の場所を書くておくこともできますし、本棚の場所が必要なければジャンルで分けることもできます。</p>
+                            <hr class="d-none d-lg-block mb-0 mr-0" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
