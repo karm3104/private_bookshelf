@@ -49,6 +49,8 @@
                                         </h5>
                                         {% if bookshelf.photo %}
                                             <img src="{{ bookshelf.photo.url }}" class="bookimg" height="100" width="80">
+                                        {% else %}
+                                            <img src="{% static '/assets/img/noImage.jpg' %}" height="100" width="80">
                                         {% endif %}
                                             <h5 class="post-meta">{{ bookshelf.group }}</h5>
                                     </div>

@@ -16,7 +16,7 @@ class Bookshelf(models.Model):
     group = models.CharField(verbose_name="グループ", max_length= 100, default="None")
     readpage = models.CharField(verbose_name="しおり", default= "0ページ", max_length= 100)
     evaluation = models.IntegerField(verbose_name="評価", blank=True, null= True, validators=[MinValueValidator(1), MaxValueValidator(5)])
-    photo = models.ImageField(verbose_name="写真", default="defaults/noImage.jpg")
+    photo = models.ImageField(verbose_name="写真", blank=True, null= True)
     created_at = models.DateTimeField(verbose_name="作成日時", auto_now_add= True)
     updated_at = models.DateTimeField(verbose_name="更新日時", auto_now= True)
 

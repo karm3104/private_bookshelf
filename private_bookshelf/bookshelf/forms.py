@@ -54,7 +54,6 @@ class BookshelfCreateForm(forms.ModelForm):
         
         self.fields['title'].widget.attrs['placeholder'] = '入力は必須です。'
         self.fields['auther'].widget.attrs['placeholder'] = '入力は必須です。'
-        self.fields['publisher'].widget.attrs['placeholder'] = '入力は必須です。'
         self.fields['evaluation'].widget.attrs['placeholder'] = '1から５の間で評価を入力してください。'
 
 

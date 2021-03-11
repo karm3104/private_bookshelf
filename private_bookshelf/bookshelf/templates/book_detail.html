@@ -19,19 +19,21 @@
         <hr>
         <div class="flexlistd">
             <div class="rowdetail">
-                <div class="col-6">
+                <div class="col-12">
                     <strong>写真</strong>
                 </div>
                 <div class="col-8">
                     {% if object.photo %}
-                        <img src="{{ object.photo.url }}" width="180" height="200/">
+                        <img src="{{ object.photo.url }}" width="180" height="200">
+                    {% else %}
+                        <img src="{% static '/assets/img/noImage.jpg' %}" width="180" height="200">
                     {% endif %}
                 </div>
             </div>
             <hr>
             <div class="flexlistdd">
                 <div class="rowr">
-                    <div class="col-6">
+                    <div class="col-12">
                         <strong>著作者</strong>
                     </div>
                     <div class="col-12">
@@ -42,7 +44,7 @@
                 <hr>
 
                 <div class="rowr">
-                    <div class="col-6">
+                    <div class="col-12">
                         <strong>出版社</strong>
                     </div>
                     <div class="col-12">
@@ -53,7 +55,7 @@
                 <hr>
 
                 <div class="rowr">
-                    <div class="col-6">
+                    <div class="col-12">
                         <strong>ISBN</strong>
                     </div>
                     <div class="col-12">
@@ -79,7 +81,7 @@
                     <strong>しおり</strong>
                 </div>
                 <div class="col-9">
-                    {{ object.readpage }}ページ
+                    {{ object.readpage }}
                 </div>
             </div>
 
