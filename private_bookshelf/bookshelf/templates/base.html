@@ -38,9 +38,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item {% block active_inquiry %}{% endblock %}">
+                            {% comment %} <li class="nav-item {% block active_inquiry %}{% endblock %}">
                                 <a class="nav-link" href=" {% url 'bookshelf:inquiry' %} ">Inquiry</a>
-                            </li>
+                            </li> {% endcomment %}
                             {% if user.is_authenticated %}
                             <li class="nav-item {% block active_bookshelf_list %}{% endblock %}">
                                 <a class="nav-link" href="{% url 'bookshelf:book_list' %}">Book List</a>

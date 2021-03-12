@@ -51,7 +51,7 @@
 
   <button type="submit" class="btn-block btn btn-lg btn-primary">Sign in</button>
   <p class="text-center">ユーザIDを登録したい方は <a href="{{ signup_url }}">ここから登録</a></p>
-  <p class="text-center">パスワードを忘れた方は <a href="{% url 'account_reset_password' %}">ここからリセット</a></p>
+  {% comment %} <p class="text-center">パスワードを忘れた方は <a href="{% url 'account_reset_password' %}">ここからリセット</a></p> {% endcomment %}
 </form>
 <!-- django form end -->
 {% endblock %}

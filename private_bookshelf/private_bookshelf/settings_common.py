@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.google',
 
-    'django_ses'
+    # 'django_ses'
 
 ]
 
@@ -133,7 +133,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',  #一般ユーザー用(メールアドレス認証)
 )
 
-ACCOUNT_AUTHENTICATION_METHOD = 'email'   # email+パスワード認証方式を指定
+#ACCOUNT_AUTHENTICATION_METHOD = 'email'   # email+パスワード認証方式を指定
 ACCOUNT_USERNAME_REQUIRED = True         # Falseでユーザ名を利用しない設定にする
 
 SITE_ID = 1   #django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別用IDを設定
@@ -141,10 +141,10 @@ LOGIN_REDIRECT_URL = 'bookshelf:book_list'   # ログインURLの設定
 # LOGIN_REDIRECT_URL = 'home'   # ログインURLの設定
 LOGIN_URL = '/accounts/login/'   #ログイン画面を何処にするかの設定
 ACCOUNT_LOGOUT_REDIRECT_URL = 'bookshelf:index'   #ログアウトリダイレクトの設定
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'   #ユーザ登録確認メールを送信する
+#ACCOUNT_EMAIL_VERIFICATION = 'mandatory'   #ユーザ登録確認メールを送信する
 ACCOUNT_EMAIL_REQUIRED = True    #メールアドレスを必須項目に指定
 
-ACCOUNT_LOGOUT_ON_GET = True     #ログアウトリンクのクリック一発でログアウトする設定
+# ACCOUNT_LOGOUT_ON_GET = True     #ログアウトリンクのクリック一発でログアウトする設定
 
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ''   #django-allauthが送信するメールの件名に自動付与される接頭辞をブランクにする設定
 DEFAULT_FROM_EMAIL = 'admin@example.com'   #デフォルトのメール送信元を設定
