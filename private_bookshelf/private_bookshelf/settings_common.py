@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.google',
 
-    # 'django_ses'
+    'django_ses'
 
 ]
 
@@ -141,16 +141,16 @@ LOGIN_REDIRECT_URL = 'bookshelf:book_list'   # ログインURLの設定
 # LOGIN_REDIRECT_URL = 'home'   # ログインURLの設定
 LOGIN_URL = '/accounts/login/'   #ログイン画面を何処にするかの設定
 ACCOUNT_LOGOUT_REDIRECT_URL = 'bookshelf:index'   #ログアウトリダイレクトの設定
-#ACCOUNT_EMAIL_VERIFICATION = 'mandatory'   #ユーザ登録確認メールを送信する
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'   #ユーザ登録確認メールを送信する
 ACCOUNT_EMAIL_REQUIRED = True    #メールアドレスを必須項目に指定
 
-# ACCOUNT_LOGOUT_ON_GET = True     #ログアウトリンクのクリック一発でログアウトする設定
+ACCOUNT_LOGOUT_ON_GET = True     #ログアウトリンクのクリック一発でログアウトする設定
 
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ''   #django-allauthが送信するメールの件名に自動付与される接頭辞をブランクにする設定
-DEFAULT_FROM_EMAIL = 'admin@example.com'   #デフォルトのメール送信元を設定
+DEFAULT_FROM_EMAIL = 'mbshelf@gmail.com'   #デフォルトのメール送信元を設定
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #コンソール上にメッセージを表示
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #コンソール上にメッセージを表示
 
 MESSAGE_TAGS = {
     messages.ERROR: 'alert alert-danger',

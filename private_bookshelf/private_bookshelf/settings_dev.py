@@ -17,7 +17,7 @@ LOGGING = {
             'handlers': ['console'],
             'level': 'INFO',
         },
-        # diaryアプリケーションが利用するロガー
+        # bookshelfアプリケーションが利用するロガー
         'bookshelf': {
             'handlers': ['console'],
             'level': 'DEBUG',
