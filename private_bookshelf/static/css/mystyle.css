@@ -106,6 +106,27 @@ footer {
     margin-left: -0.75rem;
 }
 
+/* ページネーション処理 */
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #adb5bd;
+    border-color: #64a19d;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #adb5bd;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.pagination {
+    justify-content: center;
+}
+
 
 /* IE対応 */
 /* indexページフッター上余白除去 */
